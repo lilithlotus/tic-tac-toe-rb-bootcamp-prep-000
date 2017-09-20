@@ -115,5 +115,12 @@ def winner(board)
 end
 
 def play(board)
-  input = gets
+  until over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations player #{winner(board)}"
+  elsif draw?(board)
+    puts "The game has ended in a draw."
+  end
 end
